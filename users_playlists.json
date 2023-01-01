@@ -85,10 +85,10 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTcsZTUxMWVhNzQ4YzgzYTg5OGJhN2FlMzc4M2JhNmQ4NTg1YzViMTQwNA==",
+      "snapshot_id": "MTgsNjE3ZjkwYmZlYTk4Y2U3ZTBkNGNhZTUzZjg1NzkzYWQzMmNjYTllMA==",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/6x2ThKf0SVpEfbJnhR8DfK/tracks",
-        "total": 16
+        "total": 17
       },
       "type": "playlist",
       "uri": "spotify:playlist:6x2ThKf0SVpEfbJnhR8DfK"
@@ -311,10 +311,10 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTI1LGM5MGEwM2EyNGQxMTZiOGY2NjA1ZjAyZWE0YTFjNjVmM2Q1ZjVhNWM=",
+      "snapshot_id": "MTI3LDYzOGM0NjJkNjA4MDhjYjM4ODM4OGE3MTIzYmRiNTM4MWUzNjRiMWQ=",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/6t9KnINhfeGQTU6pc4ZXjo/tracks",
-        "total": 142
+        "total": 148
       },
       "type": "playlist",
       "uri": "spotify:playlist:6t9KnINhfeGQTU6pc4ZXjo"
@@ -393,10 +393,10 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY4NDEsOGZlY2E5M2FiZjRlYTVlODZiZWJlYTMxYzcwY2M0OGJhYmM4ZWJhMg==",
+      "snapshot_id": "MTY5MDAsOGM3OTczMmRmOGYxZTMwNzc2YmFlNmEyY2JiNTQxNThhNjcyYmMzNA==",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/6Di85VhG9vfyswWHBTEoQN/tracks",
-        "total": 57
+        "total": 48
       },
       "type": "playlist",
       "uri": "spotify:playlist:6Di85VhG9vfyswWHBTEoQN"
@@ -695,17 +695,17 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MjczLDBkZDY1MzQ4YjM3MmRmNmExMGRmOWJmNGVhMGFlYzhhZDliMGI5NjQ=",
+      "snapshot_id": "Mjc1LGU0ZmQ5MGJkNjU2NTNkYTkzODE1MWIxMjZmMGU3ZGE1NWI1NmI3OWY=",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/7dxqQkIxknEfpD3ni4Pl4B/tracks",
-        "total": 195
+        "total": 197
       },
       "type": "playlist",
       "uri": "spotify:playlist:7dxqQkIxknEfpD3ni4Pl4B"
     },
     {
       "collaborative": false,
-      "description": "<a href=spotify:playlist:37i9dQZF1EIWdhtksXfr1J>Edo Saiya</a>, <a href=spotify:playlist:37i9dQZF1EIVwzLYpFmkpT>Sierra Kidd</a>, <a href=spotify:playlist:37i9dQZF1EIZc7fL8syG4t>Haftbefehl</a> and more",
+      "description": "<a href=spotify:playlist:37i9dQZF1EIWdhtksXfr1J>Edo Saiya</a>, <a href=spotify:playlist:37i9dQZF1EIWTZYu4Nsju8>Sun Diego</a>, <a href=spotify:playlist:37i9dQZF1EIY7I0NhhklbG>Farid Bang</a> and more",
       "external_urls": {
         "spotify": "https://open.spotify.com/playlist/37i9dQZF1EIVRycVn3f5dR"
       },
@@ -731,7 +731,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY3MjMxODUxOCwwMDAwMDAwMDAwNTJiODY0ZmE5YzVjODRlYzIzOTcxYmNmZDdiNTcz",
+      "snapshot_id": "MTY3MjU3MzgyMiwwMDAwMDAwMGUyM2U4MjllYzBmNDY5YTY4OGFkZTI2NDJjMGU1Mzcz",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIVRycVn3f5dR/tracks",
         "total": 50
@@ -741,7 +741,7 @@
     },
     {
       "collaborative": false,
-      "description": "<a href=spotify:playlist:37i9dQZF1EIVRycVn3f5dR>SpongeBOZZ</a>, <a href=spotify:playlist:37i9dQZF1EIWTZYu4Nsju8>Sun Diego</a>, <a href=spotify:playlist:37i9dQZF1EIVwzLYpFmkpT>Sierra Kidd</a> and more",
+      "description": "<a href=spotify:playlist:37i9dQZF1EIWvFxp1HP9x0>RIN</a>, <a href=spotify:playlist:37i9dQZF1EIVwzLYpFmkpT>Sierra Kidd</a>, <a href=spotify:playlist:37i9dQZF1EIWTZYu4Nsju8>Sun Diego</a> and more",
       "external_urls": {
         "spotify": "https://open.spotify.com/playlist/37i9dQZF1EIWdhtksXfr1J"
       },
@@ -767,7 +767,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY3MjMxODUxOCwwMDAwMDAwMDJlNWI1NWE1NzNkMDZjZWRmN2FmYjRhMTZiZmYwMDlh",
+      "snapshot_id": "MTY3MjU3MzgyMiwwMDAwMDAwMDZmYmZjODE3OTI0NGM4MWI4ODFmZGU4ZTliMGVhNDIz",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIWdhtksXfr1J/tracks",
         "total": 50
@@ -777,7 +777,7 @@
     },
     {
       "collaborative": false,
-      "description": "<a href=spotify:playlist:37i9dQZF1EIZE2q9fNJHqn>JURI</a>, <a href=spotify:playlist:37i9dQZF1EIWTZYu4Nsju8>Sun Diego</a>, <a href=spotify:playlist:37i9dQZF1EIVRycVn3f5dR>SpongeBOZZ</a> and more",
+      "description": "<a href=spotify:playlist:37i9dQZF1EIYN1K0jkvtIl>Zensery</a>, <a href=spotify:playlist:37i9dQZF1EIVpwHzBRpdFu>absent</a>, <a href=spotify:playlist:37i9dQZF1EIWdhtksXfr1J>Edo Saiya</a> and more",
       "external_urls": {
         "spotify": "https://open.spotify.com/playlist/37i9dQZF1EIW55ZcOfjIJO"
       },
@@ -803,7 +803,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY3MjMxODUxOCwwMDAwMDAwMDUxNmMyNTY4NTE0YThiNzEyYWI1YTYwNGE3MzUwMTJl",
+      "snapshot_id": "MTY3MjU3MzgyMiwwMDAwMDAwMGZmZDg3ODM1YjFhYjg1ZTI5NzhjMmU3OTU2YTkwNzU2",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIW55ZcOfjIJO/tracks",
         "total": 50
@@ -1141,7 +1141,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY3MjMwMjEzMCwwMDAwMDAwMGRjMzhlZDliMGJmY2Q0ZDMxNjc3NmJiY2ZlZTU4MDhj",
+      "snapshot_id": "MTY3MjU3MDA3NywwMDAwMDAwMGZiZWMyODM2ZTMzMmExNjNiNDY3ZGJhYWEzOWQ0OTUw",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E383vWixrVGXf/tracks",
         "total": 50
@@ -1151,7 +1151,7 @@
     },
     {
       "collaborative": false,
-      "description": "Kollegah, Deamon, Johnny Diggson und mehr",
+      "description": "Raportagen, Kollegah, Kalazh44 und mehr",
       "external_urls": {
         "spotify": "https://open.spotify.com/playlist/37i9dQZF1E37eaxvNmMSyc"
       },
@@ -1160,7 +1160,7 @@
       "images": [
         {
           "height": null,
-          "url": "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebb494fae4f401f799755ee2bd/1/de/large",
+          "url": "https://dailymix-images.scdn.co/v2/img/ab6761610000e5ebb1578ac9affd2adcc8cc28bb/1/de/large",
           "width": null
         }
       ],
@@ -1177,7 +1177,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY3MjMwMjEzMCwwMDAwMDAwMGFlODBkMzYyNWI3MWYwNWJiZDgyNDUxMWM1NzMwMThk",
+      "snapshot_id": "MTY3MjU3MDA3NywwMDAwMDAwMGFlMjg3NTdkNzljMjdhNmM0NGVmYjk4OWU2OWU5ZTcw",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E37eaxvNmMSyc/tracks",
         "total": 50
@@ -1331,7 +1331,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY3MjE5NDc0NSwwMDAwMDAwMDg5ZTY1ZjhhMzNmODYyYzRjMjJkOWQ2ZWViOGNlN2M1",
+      "snapshot_id": "MTY3MjU0NDIzMSwwMDAwMDAwMGRiNWE2OTk0MDExNjkzZDYyZWJlYTdhN2I2NWUzZmY5",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EpMTv3Uzt8s29/tracks",
         "total": 30
@@ -1367,7 +1367,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTY3MjE5NDc0NSwwMDAwMDAwMDg5ZTY1ZjhhMzNmODYyYzRjMjJkOWQ2ZWViOGNlN2M1",
+      "snapshot_id": "MTY3MjU0NDIzMSwwMDAwMDAwMGRiNWE2OTk0MDExNjkzZDYyZWJlYTdhN2I2NWUzZmY5",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EpAsjOdXcILBk/tracks",
         "total": 30
@@ -1577,7 +1577,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "Mjc4NzA2OTQsMDAwMDAwMDAwNmM3OTRkZmRkMzU1Yzk3NzlhNTY5MjI2ZTFmZjIzZA==",
+      "snapshot_id": "Mjc4NzQ5MDAsMDAwMDAwMDAyYTZjOWY5MmM3MTMxZjQ0NGJkNzkyZmJlYTVlZTk5ZA==",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO24ABPh/tracks",
         "total": 50
@@ -1613,7 +1613,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "Mjc4NzA2OTUsMDAwMDAwMDBhZTBiYzMwYjk1ODBlNWVlY2JiODkwNzZjZjUxNjZmYg==",
+      "snapshot_id": "Mjc4NzQ5MDAsMDAwMDAwMDAxNWY1Nzg0N2U3OTYzNjBlZGNlZDhhOTFmMjRhMGRkZA==",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO0ti2U1/tracks",
         "total": 50
@@ -1649,7 +1649,7 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "Mjc4NzA2OTUsMDAwMDAwMDAwNWMxNjZlZGVjM2MxYzAxNWMxYmExMTBhYWYzZGY5Yg==",
+      "snapshot_id": "Mjc4NzQ5MDAsMDAwMDAwMDA4MGM2ZDdiYjBjZDhmZTE0N2FhMGNiMWQxMGZlZDE1Mg==",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO0C4LBe/tracks",
         "total": 50
