@@ -2,7 +2,9 @@ from pytube import YouTube
 import os
 from pydub import AudioSegment
 
-path= ""
+print(os.path.dirname(os.path.abspath(__file__)))
+path2=os.path.dirname(os.path.abspath(__file__))
+path= new_string = path2.replace("\\", "/")
 
 print("Youtube URl:")
 url= input()
@@ -27,7 +29,7 @@ def DownloadVideoAsMp3(path=path):
      video.download(path)
      delete_file = video.default_filename
      mp3_file = video.default_filename.replace('.mp4', '.mp3')
-     audio = AudioSegment.from_file(video.default_filename, format='mp4')
+     audio = AudioSegment.from_file(path+"/"+video.default_filename, format='mp4')
      print("Convert "+delete_file+" to mp3...")
      audio.export(mp3_file, format='mp3')
      os.remove(delete_file)
