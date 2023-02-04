@@ -3,22 +3,40 @@ import os
 from pydub import AudioSegment
 import tarfile
 import urllib
+import sys
 
 #path2=os.path.dirname(os.path.abspath(__file__))
 path2= os.path.expanduser('~\\Downloads')
 path= new_string = path2.replace("\\", "/")
 install_path= "C:/"
 
+def FFmpegInstallation():
+    print("Downloading FFmpeg...")
+    url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
+    tar_file = install_path+"/ffmpeg.tar"
+    urllib.request.urlretrieve(url, install_path+'ffmpeg.tar')
+    print("Unzip FFmpeg...")
+    print("Installing FFmpeg...")
+    with tarfile.open(tar_file) as tar:
+        tar.extractall(path=install_path)
+    
+if os.path.exists(install_path+"/ffmpeg.tar"):
+     print("")
+else:
+    print("FFmpeg required\nYou want to install it ?...(y/n)")
+    install_answer=input()
+    if install_answer == "y" and "Y":
+        FFmpegInstallation()
+    else:
+        print('Canceled!')
+        sys.exit(1)
+    
+
 
 if os.name == "nt":
     AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
     
-def FFmpegInstallation():
-    url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
-    tar_file = urllib.request.urlretrieve(url, install_path+'ffmpeg.tar')
-    print("Downloading FFmpeg...")
 
-#FFmpegInstallation()
      
 
 print("Youtube URl:")
@@ -73,4 +91,6 @@ if answer == "y" and "Y":
 else:
     print('Canceled!')
     exit
+    
+print("File saved in "+path)
 
