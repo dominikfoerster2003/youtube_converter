@@ -6,6 +6,9 @@ print(os.path.dirname(os.path.abspath(__file__)))
 path2=os.path.dirname(os.path.abspath(__file__))
 path= new_string = path2.replace("\\", "/")
 
+if os.name == "nt":
+    AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
+
 print("Youtube URl:")
 url= input()
 yt = YouTube(url)
@@ -22,17 +25,18 @@ def DownloadVideoAsMp4():
     video.download(path)
     print("Finished!")
 
-def DownloadVideoAsMp3(path=path): 
+def DownloadVideoAsMp3(): 
      formats = yt.streams.filter(progressive=True, file_extension='mp4')
      video = max(formats, key=lambda x: x.resolution)
      print("Downloading "+yt.title+"...")
      video.download(path)
-     delete_file = video.default_filename
+     mp4_file = path+"/"+video.default_filename
+     print(path)
      mp3_file = video.default_filename.replace('.mp4', '.mp3')
      audio = AudioSegment.from_file(path+"/"+video.default_filename, format='mp4')
-     print("Convert "+delete_file+" to mp3...")
-     audio.export(mp3_file, format='mp3')
-     os.remove(delete_file)
+     print("Convert "+mp4_file+" to mp3...")
+     audio.export(path+"/"+mp3_file, format='mp3')
+     os.remove(mp4_file)
      print("Finished!")
 
 
@@ -58,7 +62,4 @@ if answer == "y" and "Y":
 else:
     print('Canceled!')
     exit
-
-
-
 
