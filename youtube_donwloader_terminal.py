@@ -1,12 +1,25 @@
 from pytube import YouTube
 import os
 from pydub import AudioSegment
+import tarfile
+import urllib
 
-path2=os.path.dirname(os.path.abspath(__file__))
+#path2=os.path.dirname(os.path.abspath(__file__))
+path2= os.path.expanduser('~\\Downloads')
 path= new_string = path2.replace("\\", "/")
+install_path= "C:/"
+
 
 if os.name == "nt":
     AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
+    
+def FFmpegInstallation():
+    url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
+    tar_file = urllib.request.urlretrieve(url, install_path+'ffmpeg.tar')
+    print("Downloading FFmpeg...")
+
+FFmpegInstallation()
+     
 
 print("Youtube URl:")
 url= input()
