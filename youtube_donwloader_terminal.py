@@ -18,7 +18,7 @@ def FFmpegInstallation():
     tar_file = urllib.request.urlretrieve(url, install_path+'ffmpeg.tar')
     print("Downloading FFmpeg...")
 
-FFmpegInstallation()
+#FFmpegInstallation()
      
 
 print("Youtube URl:")
