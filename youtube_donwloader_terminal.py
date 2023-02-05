@@ -30,8 +30,8 @@ def show_progress(block_num, block_size, total_size):
 def FFmpegInstallationWindows():
     print("Downloading FFmpeg...")
     url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
-    tar_file = install_path+"/ffmpeg.tar"
-    urllib.request.urlretrieve(url, install_path+'ffmpeg', show_progress)
+    tar_file = install_path+"ffmpeg.tar"
+    urllib.request.urlretrieve(url, install_path+'ffmpeg.tar', show_progress)
     print("Unzip FFmpeg...")
     print("Installing FFmpeg...")
     with tarfile.open(tar_file) as tar:
