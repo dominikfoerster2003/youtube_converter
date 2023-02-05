@@ -19,6 +19,7 @@ def FFmpegInstallation():
     print("Installing FFmpeg...")
     with tarfile.open(tar_file) as tar:
         tar.extractall(path=install_path)
+    os.remove(install_path+"/ffmpeg.tar")
     
 if os.path.exists(install_path+"/ffmpeg.tar"):
      print("")
@@ -93,4 +94,6 @@ else:
     exit
     
 print("File saved in "+path)
+print("Press a button to exit...")
+input()
 
