@@ -4,17 +4,34 @@ from pydub import AudioSegment
 import tarfile
 import urllib
 import sys
+import progressbar
 
 #path2=os.path.dirname(os.path.abspath(__file__))
 path2= os.path.expanduser('~\\Downloads')
 path= new_string = path2.replace("\\", "/")
 install_path= "C:/"
 
+pbar = None
+
+
+def show_progress(block_num, block_size, total_size):
+    global pbar
+    if pbar is None:
+        pbar = progressbar.ProgressBar(maxval=total_size)
+        pbar.start()
+
+    downloaded = block_num * block_size
+    if downloaded < total_size:
+        pbar.update(downloaded)
+    else:
+        pbar.finish()
+        pbar = None
+
 def FFmpegInstallationWindows():
     print("Downloading FFmpeg...")
     url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
     tar_file = install_path+"/ffmpeg.tar"
-    urllib.request.urlretrieve(url, install_path+'ffmpeg')
+    urllib.request.urlretrieve(url, install_path+'ffmpeg', show_progress)
     print("Unzip FFmpeg...")
     print("Installing FFmpeg...")
     with tarfile.open(tar_file) as tar:
