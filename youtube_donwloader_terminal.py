@@ -10,7 +10,7 @@ path2= os.path.expanduser('~\\Downloads')
 path= new_string = path2.replace("\\", "/")
 install_path= "C:/"
 
-def FFmpegInstallation():
+def FFmpegInstallationWindows():
     print("Downloading FFmpeg...")
     url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
     tar_file = install_path+"/ffmpeg.tar"
@@ -21,16 +21,35 @@ def FFmpegInstallation():
         tar.extractall(path=install_path)
     os.remove(install_path+"/ffmpeg.tar")
     
-if os.path.exists(install_path+"/ffmpeg.tar"):
-     print("")
-else:
-    print("FFmpeg required\nYou want to install it ?...(y/n)")
-    install_answer=input()
-    if install_answer == "y" and "Y":
-        FFmpegInstallation()
+def FFmpegInstallationMacos():
+    print("Downloading FFmpeg...")
+    os.system("brew install ffmpeg")
+
+if os.name == "nt":
+    if os.path.exists(install_path+"/ffmpeg.tar"):
+        print("")
     else:
-        print('Canceled!')
-        sys.exit(1)
+        print("FFmpeg required\nYou want to install it ?...(y/n)")
+        install_answer=input()
+        if install_answer == "y" and "Y":
+            FFmpegInstallationWindows()
+        else:
+            print('Canceled!')
+            sys.exit(1)
+
+if os.name == "posix":
+    if os.path.exists("/opt/homebrew/Cellar/ffmpeg/5.1.2_4/bin/"):
+        print("")
+    else:
+        print("FFmpeg required\nYou want to install it ?...(y/n)")
+        install_answer=input()
+        if install_answer == "y" and "Y":
+            FFmpegInstallationMacos()
+        else:
+            print('Canceled!')
+            sys.exit(1)
+            
+
     
 
 
