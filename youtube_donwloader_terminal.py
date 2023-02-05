@@ -26,7 +26,7 @@ def FFmpegInstallationMacos():
     os.system("brew install ffmpeg")
 
 if os.name == "nt":
-    if os.path.exists(install_path+"/ffmpeg.tar"):
+    if os.path.exists(install_path+"/ffmpeg"):
         print("")
     else:
         print("FFmpeg required\nYou want to install it ?...(y/n)")
