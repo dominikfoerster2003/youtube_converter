@@ -14,7 +14,7 @@ def FFmpegInstallationWindows():
     print("Downloading FFmpeg...")
     url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
     tar_file = install_path+"/ffmpeg.tar"
-    urllib.request.urlretrieve(url, install_path+'ffmpeg.tar')
+    urllib.request.urlretrieve(url, install_path+'ffmpeg')
     print("Unzip FFmpeg...")
     print("Installing FFmpeg...")
     with tarfile.open(tar_file) as tar:
@@ -49,10 +49,6 @@ if os.name == "posix":
             print('Canceled!')
             sys.exit(1)
             
-
-    
-
-
 if os.name == "nt":
     AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
     
