@@ -5,6 +5,7 @@ import tarfile
 import urllib
 import sys
 import progressbar
+import subprocess
 
 #path2=os.path.dirname(os.path.abspath(__file__))
 path2= os.path.expanduser('~\\Downloads')
@@ -43,6 +44,7 @@ def FFmpegInstallationMacos():
     os.system("brew install ffmpeg")
 
 if os.name == "nt":
+    AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
     if os.path.exists(install_path+"/ffmpeg"):
         print("")
     else:
@@ -69,6 +71,16 @@ if os.name == "posix":
 if os.name == "nt":
     AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
     
+def ChangePath():
+    print("Enter your Path:")
+    path = input()
+    print("Changed path to "+path)
+    
+print('Path: '+path+'\n Wanna change it ? (y/n)')
+change_path = input()
+
+if change_path == "y" and "Y":
+    ChangePath()
 
      
 
@@ -80,12 +92,16 @@ format=""
 while (format!="mp3") and (format!="mp4"):
     print("Choose Format(mp4/mp3): ")
     format = input()
+    
+
+
 
 def DownloadVideoAsMp4():
     formats = yt.streams.filter(progressive=True, file_extension='mp4')
     video = max(formats, key=lambda x: x.resolution)
     print("Downloading "+yt.title+" as MP4")
-    video.download(path)
+    print(path)
+    video.download(path, show_progress)
     print("Finished!")
 
 def DownloadVideoAsMp3(): 
