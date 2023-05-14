@@ -5,14 +5,12 @@ import tarfile
 import urllib
 import sys
 import progressbar
-from tkinter import messagebox as tkm
-from tkinter import ttk
+import json
 import tkinter as tk
 
-
-
-path2= os.path.expanduser('~\\Downloads')
-path= new_string = path2.replace("\\", "/") 
+#path2=os.path.dirname(os.path.abspath(__file__))
+path2= os.path.expanduser("~") + "/Downloads/"
+path= new_string = path2.replace("\\", "/")
 install_path= "C:/"
 
 pbar = None
@@ -34,8 +32,8 @@ def show_progress(block_num, block_size, total_size):
 def FFmpegInstallationWindows():
     print("Downloading FFmpeg...")
     url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
-    tar_file = install_path+"/ffmpeg.tar"
-    urllib.request.urlretrieve(url, install_path+'ffmpeg', show_progress)
+    tar_file = install_path+"ffmpeg.tar"
+    urllib.request.urlretrieve(url, install_path+'ffmpeg.tar', show_progress)
     print("Unzip FFmpeg...")
     print("Installing FFmpeg...")
     with tarfile.open(tar_file) as tar:
@@ -47,95 +45,109 @@ def FFmpegInstallationMacos():
     os.system("brew install ffmpeg")
 
 if os.name == "nt":
+    AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
     if os.path.exists(install_path+"/ffmpeg"):
         print("")
     else:
-        print("FFmpeg required\nYou want to install it ?...(y/n)")
-        install_answer=input()
-        if install_answer == "y" and "Y":
-            FFmpegInstallationWindows()
-        else:
-            print('Canceled!')
-            sys.exit(1)
+        def InstallFFmpegWindows():
+            print("FFmpeg required\nYou want to install it ?...(y/n)")
+            install_answer=input()
+            if install_answer == "y" and "Y":
+                FFmpegInstallationWindows()
+            else:
+                print('Canceled!')
+                sys.exit(1)
 
 if os.name == "posix":
     if os.path.exists("/opt/homebrew/Cellar/ffmpeg/5.1.2_4/bin/"):
         print("")
     else:
-        print("FFmpeg required\nYou want to install it ?...(y/n)")
-        install_answer=input()
-        if install_answer == "y" and "Y":
-            FFmpegInstallationMacos()
-        else:
-            print('Canceled!')
-            sys.exit(1)
+        def InstallFFmpegMacOS():
+            print("FFmpeg required\nYou want to install it ?...(y/n)")
+            install_answer=input()
+            if install_answer == "y" and "Y":
+                FFmpegInstallationMacos()
+            else:
+                print('Canceled!')
+                sys.exit(1)
             
 if os.name == "nt":
     AudioSegment.ffmpeg = "C:/FFmpeg/bin/ffmpeg.exe"
     
+def ChangePath():
+    print("Enter your Path:")
+    path = input()
+    print("Changed path to "+path)
 
-class GUI:
-    def __init__(self, master):
-        self.master = master
-        master.title("Youtube Downloader")
 
-        self.url_label = tk.Label(master, text="Youtube URL:")
-        self.url_label.grid(row=0, column=0)
+def VideoInfo():
+    yt_video_info = (
+        "Title: "+yt.title+"\n"+
+        "Channel: "+yt.author+"\n"+
+        "Release: "+str(yt.publish_date)+"\n"   
+        "Views: "+str(yt.views)+"\n"+
+        "Format: "+format
+    )
+    return(yt_video_info)
 
-        self.url_entry = tk.Entry(master, width=50)
-        self.url_entry.grid(row=0, column=1)
-        
-        self.format_label_text = tk.Label(master, text="Format: ")
-        self.format_label_text.grid(row=1, column=0)
-
-        self.format_label = tk.Entry(ttk.Combobox(master, values=[
-            'mp3',
-            'mp4'
-        ])row=1,column=1)
-        self.format_label.grid(row=1, column=0)
-
-        #self.format_entry = tk.Entry(master, width=50)
-        #self.format_entry.grid(row=1, column=1)
-
-        self.download_button = tk.Button(master, text="Download", command=self.download)
-        self.download_button.grid(row=2, column=1)
-
-    def download(self):
-        url = self.url_entry.get()
-        format = self.format_entry.get()
-
-        yt = YouTube(url)
-
-        if format == "mp3":
-            self.download_video_as_mp3(yt)
-        elif format == "mp4":
-            self.download_video_as_mp4(yt)
-        else:
-            print("Invalid format")
-            
-    def download_video_as_mp4(self, yt):
+def submit():
+    url = entry.get()
+    format = var.get()
+    yt = YouTube(url) 
+    yt_video_info = ()
+    info_window = tk.Toplevel(root)
+    info_window.title("Video Info")
+    label = tk.Label(info_window, text="Title: "+yt.title+"\n"+
+        "Channel: "+yt.author+"\n"+
+        "Release: "+str(yt.publish_date)+"\n"   
+        "Views: "+str(yt.views)+"\n"+
+        "Format: "+format)
+    label.pack()
+    if format == "MP4":
+        yt = YouTube(url) 
         formats = yt.streams.filter(progressive=True, file_extension='mp4')
         video = max(formats, key=lambda x: x.resolution)
-        file_path = os.path.expanduser('~\\Downloads')
         print("Downloading "+yt.title+" as MP4")
-        video.download(file_path)
-        tkm.showinfo(title="Download complete", message="Video saved in "+file_path)
+        print(path)
+        video.download(path)
+        print("Finished!")
 
-    def download_video_as_mp3(self, yt):
+    if format == "MP3":
         formats = yt.streams.filter(progressive=True, file_extension='mp4')
         video = max(formats, key=lambda x: x.resolution)
-        file_path = os.path.expanduser('~\\Downloads')
         print("Downloading "+yt.title+"...")
-        video.download(file_path)
-        mp4_file = file_path+"/"+video.default_filename
+        video.download(path)
+        mp4_file = path+"/"+video.default_filename
         mp3_file = video.default_filename.replace('.mp4', '.mp3')
-        audio = AudioSegment.from_file(file_path+"/"+video.default_filename, format='mp4')
-        print("Converting "+mp4_file+" to mp3...")
-        audio.export(file_path+"/"+mp3_file, format='mp3')
+        audio = AudioSegment.from_file(path+"/"+video.default_filename, format='mp4')
+        print("Convert "+mp4_file+" to mp3...")
+        audio.export(path+"/"+mp3_file, format='mp3')
         os.remove(mp4_file)
-        tkm.showinfo(title="Download complete", message="Audio saved in "+file_path)
+        print("Finished!")
+        
 
 
 root = tk.Tk()
-gui = GUI(root)
+
+label = tk.Label(root, text="Eingabe:")
+label.pack()
+
+entry = tk.Entry(root)
+entry.pack()
+
+label = tk.Label(root, text="Auswahl:")
+label.pack()
+
+var = tk.StringVar(value="MP4")
+option1 = tk.Radiobutton(root, text="MP4", variable=var, value="MP4")
+option1.pack()
+option2 = tk.Radiobutton(root, text="MP3", variable=var, value="MP3")
+option2.pack()
+
+button = tk.Button(root, text="Bestätigen", command=submit)
+button.pack()
+
+entry.pack(fill=tk.X)
+
+root.geometry("500x200")
 root.mainloop()
