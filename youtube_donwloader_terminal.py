@@ -5,7 +5,8 @@ import tarfile
 import urllib
 import sys
 import progressbar
-import json
+import urllib.request
+import py7zr
 
 #path2=os.path.dirname(os.path.abspath(__file__))
 path2= os.path.expanduser("~") + "/Downloads/"
@@ -30,14 +31,13 @@ def show_progress(block_num, block_size, total_size):
 
 def FFmpegInstallationWindows():
     print("Downloading FFmpeg...")
-    url = "http://ubuntuerfurt.zapto.org/ffmpeg/ffmpeg.tar"
-    tar_file = install_path+"ffmpeg.tar"
-    urllib.request.urlretrieve(url, install_path+'ffmpeg.tar', show_progress)
-    print("Unzip FFmpeg...")
-    print("Installing FFmpeg...")
-    with tarfile.open(tar_file) as tar:
-        tar.extractall(path=install_path)
-    os.remove(install_path+"/ffmpeg.tar")
+    url = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z"
+    zip_file = install_path + "ffmpeg.7z"
+    urllib.request.urlretrieve(url, zip_file, show_progress)
+    print("Unzipping FFmpeg...")
+    with py7zr.SevenZipFile(zip_file, mode='r') as z:
+        z.extractall(install_path)
+    os.remove(zip_file)
     
 def FFmpegInstallationMacos():
     print("Downloading FFmpeg...")
